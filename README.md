@@ -1,6 +1,6 @@
 # Time-Travel is an web application for saving locations while on a trip using Google Places API.
 
-# User Stories
+## User Stories
 - As someone who likes to blog, I want a way to pinpoint the places I went so I can have something to look back to when I blog about my trip.
 - As someone who likes scrapbook style memoirs, I want to be able to document the places I’ve gone as a personal keepsake.
 - As someone who loves to travel, I want to be able to save the places I went and share them with my friends so when they visit that city they can see where I went and my experience/rating.
