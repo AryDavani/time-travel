@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default class SignupForm extends Component {
+class Homepage extends Component {
   constructor() {
     super();
   }
@@ -8,8 +8,10 @@ export default class SignupForm extends Component {
   render(){
     return(
       <div>
-        <h1>Signup Form</h1>
+        <h1>Homepage</h1>
       </div>
     )
   }
 }
+
+export default Homepage;
