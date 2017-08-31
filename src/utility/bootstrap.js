@@ -1,0 +1,1 @@
+bootstrapUtils.addStyle(Button, 'custom');

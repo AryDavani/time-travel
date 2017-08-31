@@ -3,3 +3,36 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.signup-div {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #181F1C;
+}
+.signup-box {
+  box-shadow: 5px 5px #CEB3AB, 10px 10px #B49A67;
+  width: 30%;
+  background-color: #466365;
+  padding: 3%;
+  border-radius: 5px;
+}
+.unselected {
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 1px white;
+  background-color: #466365;
+  color: white;
+}
+form input {
+  margin: 20px 0px;
+}
+.signup-buttons {
+  text-decoration: none;
+  color: black;
+}
+.signup-buttons:hover {
+  text-decoration: none;
+  color: black;
+}
