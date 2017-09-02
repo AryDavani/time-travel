@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { ButtonToolbar, ButtonGroup, Button, FormGroup, ControlLabel, HelpBlock, FormControl } from 'react-bootstrap';
 import DatePicker from 'react-bootstrap-date-picker';
 
@@ -12,6 +12,11 @@ class NewTrip extends Component {
       endDate: ''
     };
 
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event){
+    console.log("onChange fired", event);
   }
 
   render(){
@@ -31,18 +36,20 @@ class NewTrip extends Component {
             <FormGroup>
               <ControlLabel className="white-text">Start Date</ControlLabel>
               <DatePicker
+                showClearButton={ false }
                 bsSize="lg"
                 onChange={ this.handleChange }
-                value={ this.state.startDate }
+                // value={ this.state.startDate }
               />
             </FormGroup>
 
             <FormGroup>
               <ControlLabel className="white-text">End Date</ControlLabel>
               <DatePicker
+                showClearButton={ false }
                 bsSize="lg"
                 onChange={ this.handleChange }
-                value={ this.state.endDate }
+                // value={ this.state.endDate }
               />
             </FormGroup>
           </form>
