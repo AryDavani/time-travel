@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { NavLink } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 class Homepage extends Component {
   constructor() {
@@ -8,7 +10,10 @@ class Homepage extends Component {
   render(){
     return(
       <div>
-        <h1>Homepage</h1>
+        <div>
+          <NavLink to="newtrip"><Button bsSize="lg">New Trip</Button></NavLink>
+        </div>
+
       </div>
     )
   }

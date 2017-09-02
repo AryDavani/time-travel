@@ -9,8 +9,8 @@ export default class LoginForm extends Component {
 
   render(){
     return(
-      <div className="container signup-div">
-        <div className="signup-box">
+      <div className="container outer-div">
+        <div className="box">
           <ButtonGroup bsSize="lg">
             <Button bsStyle="default"><NavLink className="signup-buttons" to="/login">Login</NavLink></Button>
             <Button bsStyle="default"><NavLink className="signup-buttons" to="/signup">Signup</NavLink></Button>

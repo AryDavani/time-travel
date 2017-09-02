@@ -8,6 +8,7 @@ import Thunk from 'redux-thunk';
 import Homepage from './components/Homepage';
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
+import NewTrip from './components/NewTrip';
 
 import reducers from './reducers';
 import { Provider } from 'react-redux';
@@ -23,6 +24,8 @@ ReactDOM.render(
         <Route exact path="/" component={ Homepage }/>
         <Route path="/login" component={ LoginForm }/>
         <Route path="/signup" component={ SignupForm }/>
+        <Route path="/newtrip" component={ NewTrip }/>
+
       </Switch>
     </BrowserRouter>
   </Provider>
