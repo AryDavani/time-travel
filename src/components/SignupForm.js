@@ -1,12 +1,28 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { ButtonToolbar, ButtonGroup, Button, FormGroup, ControlLabel, HelpBlock, FormControl } from 'react-bootstrap';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { signup } from '../actions/actions.js';
 
 export default class SignupForm extends Component {
   constructor() {
     super();
+
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
+  handleFormSubmit(event){
+    event.preventDefault();
+
+    let object = {};
+    object['username'] = event.target.username.value;
+    object['password'] = event.target.password.value;
+
+    this.props.signup(JSON.stringify(object));
+
+    event.target.reset();
+  }
   render(){
     return(
       <div className="container outer-div">

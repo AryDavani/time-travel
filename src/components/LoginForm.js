@@ -1,10 +1,28 @@
 import React, {Component} from 'react';
 import { ButtonToolbar, ButtonGroup, Button, FormGroup, ControlLabel, HelpBlock, FormControl } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {login} from '../actions/actions.js';
+import { withRouter } from 'react-router';
 
-export default class LoginForm extends Component {
+class LoginForm extends Component {
   constructor() {
     super();
+
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+  }
+
+  handleFormSubmit(event){
+    event.preventDefault();
+
+    let object = {};
+
+    object['username'] = event.target.username.value;
+    object['password'] = event.target.password.value;
+
+    this.props.login(object);
+    event.target.reset();
   }
 
   render(){
@@ -15,13 +33,15 @@ export default class LoginForm extends Component {
             <Button bsStyle="default"><NavLink className="signup-buttons" to="/login">Login</NavLink></Button>
             <Button bsStyle="default"><NavLink className="signup-buttons" to="/signup">Signup</NavLink></Button>
           </ButtonGroup>
-          <form>
+          <form onSubmit={ this.handleFormSubmit }>
             <FormControl
+              name="email"
               bsSize="lg"
               type="email"
               placeholder="Email Address"
             />
             <FormControl
+              name="password"
               bsSize="lg"
               type="password"
               placeholder="Password"
@@ -35,3 +55,5 @@ export default class LoginForm extends Component {
     )
   }
 }
+
+export default LoginForm;
