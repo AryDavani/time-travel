@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { ButtonToolbar, ButtonGroup, Button, FormGroup, ControlLabel, HelpBlock, FormControl } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { signup } from '../actions/actions.js';
+import { ButtonToolbar, ButtonGroup, Button, FormGroup, ControlLabel, HelpBlock, FormControl } from 'react-bootstrap';
 
-export default class SignupForm extends Component {
+class SignupForm extends Component {
   constructor() {
     super();
 
@@ -63,3 +63,15 @@ export default class SignupForm extends Component {
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    authenticated: state.auth.authenticated
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({signup}, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignupForm);

@@ -13,12 +13,20 @@ class LoginForm extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
+  componentWillMount(){
+    this.props.authenticated ? this.props.history.push('/') : null
+  }
+
+  componentWillReceiveProps(nextProps) {
+    nextProps.authenticated ? this.props.history.push('/') : null
+  }
+
   handleFormSubmit(event){
     event.preventDefault();
 
     let object = {};
 
-    object['username'] = event.target.username.value;
+    object['email'] = event.target.email.value;
     object['password'] = event.target.password.value;
 
     this.props.login(object);
@@ -56,4 +64,14 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm;
+function mapStateToProps(state) {
+  return {
+    authenticated: state.auth.authenticated
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({login}, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);
